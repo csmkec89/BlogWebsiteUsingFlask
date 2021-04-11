@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Welcome to Dashboard</h1>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<a href="/edit/0"<button class="btn btn-primary">ADD a New Post</button></a>
+
+<a href="/logout"<button class="btn btn-primary">Logout</button></a>
+<hr>
+<h1>Upload A File</h1>
+<hr>
+<html>
+   <body>
+      <form action = "/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+   </body>
+</html>
+
+
+
+<hr>
+
+
+  <div class="container">
+
+
+    <table class="table">
+      <thead>
+
+
+        <tr>
+          <th>SRNO</th>
+          <th>TITLE</th>
+          <th>DATE</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      {% for post in posts %}
+
+
+        <tr>
+          <td>{{post.SRNO}}</td>
+          <td>{{post.TITLE}}</td>
+          <td>{{post.DATE}}</td>
+          <td><a href="/edit/{{post.SRNO}}"<button class="btn btn-primary">Edit </button></a></td>
+          <td><a href="/delete/{{post.SRNO}}"<button class="btn btn-primary">Delete </button></a></td>
+        
+
+
+
+        </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  </body>
+  </html>
+
+
+
+
+{% endblock %}
