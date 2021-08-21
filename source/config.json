@@ -2,7 +2,7 @@
   "params":
   {
     "db_uri":"mysql+pymysql://root:@localhost/nainitaluntraveled",
-    "title_tab_url":"Nainital Photography",
+    "title_tab_url":"Nainital Photography 2021",
     "blog_name":"Photography is Life",
     "sub_head":"Nainital Heaven on Earth",
     "tw_url":"https://twitter.com/xyz",
