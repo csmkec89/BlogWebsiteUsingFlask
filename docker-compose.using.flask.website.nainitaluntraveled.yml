@@ -1,0 +1,19 @@
+version: "3.9"
+    
+services:
+  db:
+    image: mysql:5.6
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: Admin!12345
+      
+      
+    
+  web:
+    depends_on:
+      - db
+    image: flask-web-container:latest
+    ports:
+      - "3001:3000"
+    restart: always
